@@ -1,0 +1,20 @@
+{
+  "name": "ng-thumb",
+  "description": "Angular thumbnail directive, preview uploaded images using canvas",
+  "main": "index.js",
+  "authors": [
+    "RoM4iK"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular",
+    "thumb",
+    "thumbnail",
+    "ng-thumb",
+    "canvas",
+    "image",
+    "file",
+    "upload"
+  ],
+  "homepage": "https://github.com/RoM4iK/ng-thumb"
+}

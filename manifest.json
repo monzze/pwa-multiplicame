@@ -1,0 +1,99 @@
+
+{
+  "name": "#Multiplicame",
+  "short_name": "#Multiplicame",
+  "description": "Bienvenid@s a Multiplicame :)",
+  "background_color": "#2B2B2B",
+  "theme_color": "#F0DB4F",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "./?utm_source=web_app_manifest",
+  "scope": "./",
+  "lang": "es-MX",
+  "icons": [
+    
+    {
+      "src": "./img/icon_310.png",
+      "sizes": "310x310",
+      "type": "image/png"
+    },
+   
+    {
+      "src": "./img/icon_192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/icon_120.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/icon_96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/icon_60.png",
+      "sizes": "60x60",
+      "type": "image/png"
+    },
+
+    {
+      "src": "./img/icon_32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/favicon.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/apple_57.png",
+      "sizes": "57x57",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/apple_72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/apple_76.png",
+      "sizes": "76x76",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/apple_114.png",
+      "sizes": "114x114",
+      "type": "image/png"
+    },
+   
+    {
+      "src": "./img/apple_152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/apple_180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/android_36.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/android_48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/android_144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}

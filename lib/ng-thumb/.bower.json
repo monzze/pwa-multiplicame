@@ -1,0 +1,31 @@
+{
+  "name": "ng-thumb",
+  "description": "Angular thumbnail directive, preview uploaded images using canvas",
+  "main": "index.js",
+  "authors": [
+    "RoM4iK"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular",
+    "thumb",
+    "thumbnail",
+    "ng-thumb",
+    "canvas",
+    "image",
+    "file",
+    "upload"
+  ],
+  "homepage": "https://github.com/RoM4iK/ng-thumb",
+  "version": "1.0.1",
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.1",
+    "commit": "5ec00cdf01336fd5a61b1726d33a29aa41e549d6"
+  },
+  "_source": "https://github.com/RoM4iK/ng-thumb.git",
+  "_target": "^1.0.1",
+  "_originalSource": "ng-thumb",
+  "_direct": true
+}

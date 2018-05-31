@@ -1,0 +1,1445 @@
+
+<!DOCTYPE html>
+<html lang="es" ng-app="MadMediaOnlineStore">
+  <head>
+    <meta charset="utf-8">
+     <!--Cambia el enrutamiento y las URL de las páginas sin actualizarlas (API HTML5)-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+    <meta name="keywords" content="{{seoData.metaKeywords}}"> <!--Meta keywords (palabras claves que resumen la página)-->
+    <meta name="description" content="{{seoData.metaDescription}}"> <!--Meta description (breve descripción del contenido de la página)-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="google-site-verification" content="JkQVUfgzsF7vxTRiQMHsF3T3a96FzMZhJ7uwQcyDS_E" />
+    
+    <link rel="canonical" href="http://multiplicame.com">
+
+
+    <title>#multiplicame</title>
+  
+
+
+    <meta name="theme-color" content="#F0DB4F">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="shortcut icon" type="image/png" href="./img/logoMobile.png">
+    <link rel="apple-touch-icon" href="./logoMobile.png">
+    <link rel="apple-touch-startup-image" href="./logoMobile.png">
+    <link rel="manifest" href="./manifest.json">
+  
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+    
+
+    <!-- Librery Bootstrap -->
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="lib/bootstrap-slider/slider.css" rel="stylesheet">
+    <link href="lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!--Hoja de estilo para el dashboard del cliente-->
+    <link href="css/customer.css" rel="stylesheet">
+    <!--Fuentes generadas con icomoon.io-->
+    <link href="css/fonts.css" rel="stylesheet">
+    <!--Hoja de estilo para el dashboard del administrador-->
+    <link href="css/admin.css" rel="stylesheet">
+    <!--Hoja de estilo para resetear las clases de Bootstrap y darle un nuevo diseño-->
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--Hoja de estilo del sitio de multiplicame.com-->
+    <link href="css/style.css" rel="stylesheet">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Prompt:100,200,300,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pragati+Narrow:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">  
+    <!--owl.carousel-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.min.css" /> 
+    <!--Library animate.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!--ICONS-->  
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">    
+  </head>
+<body>
+  <header ng-show="!adminMode">
+      <nav class="navbar navbar-inverse navbar-top navbar-static-top" role="navigation" id="top-bar" style="z-index:1001" ng-hide="adminMode">
+          <div class="container">
+            <div class="navbar-header">
+              <!--Redes sociales-->
+              <span class="navbar-social"><a class="pointer" href="https://www.facebook.com/Multiplicame-134434467268809"><i class="icon- icon-facebook" style="color:#dbdbdb; font-size:17px; vertical-align: middle;"></i></a></span>
+              <span class="navbar-social"><a class="pointer" href="https://twitter.com/multiplicame17"><i class="icon- icon-twitter" style="color:#dbdbdb; font-size:17px; vertical-align: middle;"></i></a></span>
+              <span class="navbar-social"><a class="pointer" href="https://www.youtube.com/channel/UCzOa5EdbqWhPNph8lx20h8A"><img ng-src="img/yt.png" /></a></span>
+              <span class="navbar-social"><a class="pointer" href="https://www.instagram.com/multiplicame/"><i class="icon- icon-instagram-logo" style="color:#dbdbdb; font-size:17px; vertical-align: middle;"></i></a></span>
+              <span class="navbar-social"><a class="pointer" href="https://www.pinterest.com.mx/multiplicame/"><i class="icon- icon-pinterest-logo" style="color:#dbdbdb; font-size:17px; vertical-align: middle;"></i></a></span>
+              <!--links de ayuda-->
+              <span class="hidden-xs navbar-textlinks last-link" ><a href="mailto:contacto@multiplicame.com">Cont&aacute;ctanos</a></span>
+              <span class="hidden-xs navbar-textlinks" ><a ui-sref="help">Ayuda</a></span>
+              <span class="hidden-xs navbar-textlinks" ><a ui-sref="guarantee-policy">Garant&iacute;as</a></span>
+              <!--<span class="hidden-xs hidden-lg navbar-textlinks"><a>Chat</a></span>-->
+            </div>
+          </div>
+        </nav>
+      
+        <nav class="navbar navbar-default navbar-static-top navbar-lower" role="navigation" id="slide-nav" ng-hide="adminMod">
+        
+              <div class="navbar-header">
+                <a id="open-side" class="pointer navbar-toggle">
+                  <img ng-src="img/hamburguer.gif" />
+                </a>
+                <a id="logo-container" class="navbar-brand" ui-sref="home">
+                  <img class="" ng-src="img/logo.png" />
+                </a>
+              </div>
+              <div id="menu-overlay" style="position:absolute;width:100%;height:1100px;background:black;opacity:0.5;left:-100%;z-index:1000" class="pointer visible-xs"> </div>
+              <div id="slidemenu" class="navbar-brand">
+                <ul class="nav navbar-nav">
+                  <li class="visible-xs" id="cliente-tab" style=" border-bottom:solid 2px #ff8327">
+                    <table id="cliente-table" ng-show="currentUser && currentUser.accountStatus !== 'temporary'">
+                      <tr>
+                        <td>
+                          <div id="client-pic"><img ng-show="currentUser.photoProfile" alt="" ng-src="{{currentUser.photoProfile}}"></div>
+                        </td>
+                        <td id="cliente-nombre-td" ng-show="currentUser && currentUser.accountStatus !== 'temporary'">
+                          <a href="#" id="cliente-nombre">{{currentUser.fullName || currentUser.username}}</a><br>
+                          <span id="cliente-status">{{tipoDeUsuario(currentUser.type)}}</span><br><br>
+                        </td>
+                      </tr>
+                    </table>
+                  </li>
+                  <!--<li class="visible-xs" style="border-bottom:solid 2px #ff8327" ng-hide="currentUser && currentUser.accountStatus !== 'temporary'"></li>-->
+               
+                  
+      
+                  <li class="text-menu only-text visible-xs ">
+                    <a ui-sref="home">HOME</a>
+                    <span class="visible-xs submenu">
+                      <img ng-src="img/submenu-arrow.png"  style="height:15px"/>
+                    </span>
+                  </li>
+      
+                  <!--<li class="text-menu only-text hidden-xs hidden-sm hidden-md"><a href="#">MARCAS</a></li>-->
+                  <li class="text-menu only-text hidden-xs hidden-xs"><!--hidden-xs hidden-sm hidden-md-->
+                    <a ui-sref="brand({brandTag:brands[0].tag})" ui-sref-opts="{reload: true}">MARCAS</a>
+                    <div class=" visible-xs sub-menu" ng-show="brands.length">
+                      <ul>
+                        <li ng-repeat="brand in brands">
+                          <a style="text-transform: uppercase;" ui-sref="brand({brandTag:brand.tag})" ui-sref-opts="{reload: true}">{{brand.name}}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+      
+                  <!--<li class="text-menu only-text hidden-sm">
+                    <a ui-sref="category({categoryTag:'celulares'})">PRODUCTOS</a>
+                    <span class="visible-xs submenu" style="">
+                      <img ng-src="img/submenu-arrow.png"  style="height:15px"/>
+                    </span>
+                  </li>-->
+      
+                  <li class="text-menu only-text hidden-xs"> <!--hidden-xs hidden-sm hidden-md-->
+                    <a ui-sref="category({categoryTag:categoryTree[0].tag})">PRODUCTOS</a>
+                    <div class="visible-xs  sub-menu" ng-show="categoryTree.length">
+                      <ul>
+                        <li ng-repeat="category in categoryTree">
+                          <a style="  text-transform: uppercase;" ui-sref="category({categoryTag:category.tag})" ui-sref-opts="{reload: true}">{{category.tag}}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+      
+                  <li class="text-menu only-text">
+                    <a ui-sref="hot-sales">HOTSALE</a>
+                    <span class="visible-xs submenu">
+                      <img ng-src="img/submenu-arrow.png"  style=" height:15px"/>
+                    </span>
+                  </li>
+                  <!--<li class="text-menu only-text hidden-lg hidden-xs">
+                    <a>BLOG</a>
+                    <span class="visible-xs submenu" style="">
+                      <img ng-src="img/submenu-arrow.png"  style="height:15px"/>
+                    </span>
+                  </li>-->
+                  <li class="text-menu only-text visible-xs ">
+                    <a ui-sref="home">MULTIPL&Iacute;CAME</a>
+                    <span class="visible-xs submenu">
+                      <img ng-src="img/submenu-arrow.png"  style="height:15px"/>
+                    </span>
+                  </li>
+                  <li class="text-menu only-text visible-xs " style="border-bottom:solid 2px #ff8327">
+                    <a ui-sref="help">AYUDA</a>
+                    <span class="visible-xs submenu">
+                      <img ng-src="img/submenu-arrow.png"  style="height:15px"/>
+                    </span>
+                  </li>
+                  <li class="visible-lg">
+                    <form class="navbar-form" role="search" ng-submit="searchProducts()">
+                      <div class="input-group add-on">
+                        <input class="form-control" placeholder="Buscar" name="srch-term" id="srch-term" type="text" ng-model="nav.searchTerms">
+                        <div class="input-group-btn">
+                          <button class="btn" type="submit">
+                            <img src="img/searchIcon.png"/>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </li>
+                  <li>
+                    <a class="visible-sm visible-md">
+                      <img id="open-search" class="search-trigger pointer" src="img/mobileSearch.png" style="margin-right:10px" />
+                    </a>
+                  </li>
+                  <!--<li class="hidden-xs hidden-lg hidden-md hidden-sm"><a href="#"><img ng-src="img/favDark.png" ></a></li>-->
+                  <li class="navbar-icon text-menu hidden-xs">
+                    <a class="hidden-xs">
+                      <img ng-show="!currentUser.photoProfile" ng-src="img/accountIcon.png">
+                      <img id="photoProfile" ng-show="currentUser.photoProfile" alt="" ng-src="{{currentUser.photoProfile}}">
+                    </a>
+                  </li>
+                  <li class="text-menu"> <!--visible-lg visible-xl-->
+                    <a ng-hide="img/submenu-arrow.png"  "currentUser && currentUser.accountStatus !== 'temporary'" class="mi-cuenta pointer">Mi cuenta</a>
+                    <a ng-show="currentUser && currentUser.accountStatus !== 'temporary'" class="mi-cuenta pointer"></a>
+                    <div class=" visible-xs sub-menu">
+                      <ul>
+                        <li class="pointer" ui-sref="dashboardCustomer"  ng-show="currentUser && currentUser.accountStatus !== 'temporary'"><a><i class="fa fa-tachometer"></i> DASHBOARD</a></li>
+                        <li class="pointer" ui-sref="historical"  ng-show="currentUser && currentUser.accountStatus !== 'temporary'"><a><i class="fa fa-history"></i> HISTORIAL</a></li>
+                        <li class="pointer" ui-sref="informationCustomer" ng-show="currentUser && currentUser.accountStatus !== 'temporary'"><a> <i class="fa fa-user"> </i> MI INFORMACIÓN</a></li>
+                        <li class="pointer" ui-sref="listAddress" ng-show="currentUser && currentUser.accountStatus !== 'temporary'"><a> <i class="fa fa-address-book-o"></i> MI DIRECCIÓN</a></li>
+                        <li class="pointer" ui-sref="login" ng-show="!currentUser || currentUser.accountStatus === 'temporary'"><a> <i class="fa fa-lock"> </i> INICIAR SESIÓN</a></li>
+                        <li class="pointer" ui-sref="register" ng-hide="currentUser && !currentUser.temporaryToken"><a><i class="fa fa-user-o" aria-hidden="true"></i> REGISTRARSE</a></li>
+                        <li class="pointer" ui-sref="admin.logout" ng-show="currentUser && !currentUser.temporaryToken"><a><i class="fa fa-sign-out"></i> SALIR</a></li>
+                      </ul>
+                    </div>
+                  </li>
+      
+                  <li class="navbar-icon text-menu carrito-li">
+                    <a ui-sref="cart" id="carrito-thumb">
+                      <img ng-src="img/shopCartCount.png" class="hidden-xs visible-sm visible-md hidden-lg">
+                      <div ng-src="img/shopCartFull.png" class="hidden visible-lg imgBg-button shop-cart-full">
+                        <span ng-show="cartTotalItems"></span>
+                        <span ng-show="cartTotalItems"></span>
+                      </div>
+                    </a>
+      
+                    <img ng-src="img/logo-lateral-2.png" id="logo-slide" class="visible-xs">
+                    <div id="carrito-bridge"></div>
+                    <div  id="carrito-flotante" class="hidden-xs">
+                      <div ng-include="'views/store/cart-floating.html'"> </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+      
+              <div id="submenuLateral" class="submenu-lateral visible-xs" style="position:absolute;width:80%;height:1100px;left:-100%;z-index:1000">
+                <ul>
+                  <li class="closeSubmenu pointer" >
+                    <a style="float:right;border-left: solid 1px #fd8227;height: 100%;width: 55px;float: right;height: 60px;line-height: 40px;margin-top: -10px;padding-left: 23px;cursor: pointer;">
+                      <img ng-src="img/next-small-orange.png" style="width:9px;height:15px;">
+                    </a>
+                    <a style="text-align:right;width:30px;float:right;margin-right:47px;">Regresar</a></li>
+                    <li ng-show="currentUser && currentUser.accountStatus !== 'temporary'"><a ui-sref="dashboardCustomer"><i class="fa fa-tachometer"></i> DASHBOARD</a></li>
+                    <li class="pointer" ui-sref="historical"  ng-show="currentUser && currentUser.accountStatus !== 'temporary'"><a><i class="fa fa-history"></i> HISTORIAL</a></li>
+                    <li ng-show="currentUser && currentUser.accountStatus !== 'temporary'"><a ui-sref="informationCustomer"> <i class="fa fa-user"> </i> MI INFORMACIÓN</a></li>
+                    <li ng-show="currentUser && currentUser.accountStatus !== 'temporary'"><a ui-sref="listAddress"> <i class="fa fa-address-book-o"></i> MI DIRECCIÓN</a></li>
+                    <li ng-show="!currentUser || currentUser.accountStatus === 'temporary'"><a ui-sref="login"> <i class="fa fa-lock"> </i> INICIAR SESIÓN</a></li>
+                    <li ng-hide="currentUser && !currentUser.temporaryToken"><a ui-sref="register"><i class="fa fa-user-o" aria-hidden="true"></i> REGISTRARSE</a></li>
+                    <li ng-show="currentUser && !currentUser.temporaryToken"><a ui-sref="admin.logout"><i class="fa fa-sign-out"></i> SALIR</a></li>
+                </ul>
+              </div>
+      
+              <div class="navbar-brand navbar-hide">
+                <a class="navbar-toggle .navbar-right" href="#">
+                  <img id="open-search" class="search-trigger pointer" ng-src="img/mobileSearch.png" style="margin-right:10px" />
+                </a>
+                <a class="navbar-toggle .navbar-right" ui-sref="cart">
+                  <div ng-src="img/shopCartCount.png" class="visible-xs imgBg-button shop-cart-count cart375">
+                    <span>{{cartTotalItems}}</span>
+                  </div>
+                </a>
+              </div>
+      
+      
+              <div id="search-bar" class="hidden-lg hidden-xl" style="position:absolute">
+                <div class="search-cont">
+                      <div class="container">
+                      <form class="navbar-form" role="search" ng-submit="searchProducts()">
+                              <div class="input-group add-on float-left">
+                                <input class="form-control" placeholder="Buscar" name="srch-term" id="srch-term" type="text" ng-model="nav.searchTerms">
+                                <div class="input-group-btn">
+                                  <button class="btn btn-default" type="submit">
+                                    <img src="img/searchIcon.png">
+                                  </button>
+                                </div>
+                              </div>
+                              <span id="close-search" class="search-trigger pointer ">Cerrar</span>
+                            </form>
+                      </div>
+                    </div>
+                    <div>
+                    </div>
+                  </div>
+      
+      
+          </nav>
+
+
+  </header>
+
+  <main ui-view>
+
+    <main ui-view="" class="ng-scope"><!--=======================================================-->
+        <!--                   slideshows                          -->
+        <!--=======================================================-->
+        <div class="no-margin-top ng-scope" style="margin-top:-10px;">
+          <div id="carousel-container">
+            <div class="logo-container">
+              <data-owl-carousel class="owl-carousel owl-main" data-options="slidesHome">
+                <!-- ngRepeat: slides in Slides[0].entries -->
+              </data-owl-carousel>
+            </div>
+          </div>
+        </div>
+        <!--=======================================================-->
+        <!--                   Más vendidos                        -->
+        <!--=======================================================-->
+        <div id="vendidos-container" class="container ng-scope">
+          <h5 class="categorias">
+            MÁS VENDIDOS
+          </h5>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="item">
+                <data-owl-carousel class="owl-carousel owl-vendidos owl-theme" data-options="owlVendidos" style="opacity: 1; display: block;">
+                  <!-- ngRepeat: product in mostBoughtProducts --><!-- ngInclude: 'views/store/product-item.html' --><div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 3420px; left: 0px; display: block; transition: all 1000ms ease; transform: translate3d(0px, 0px, 0px);"><div class="owl-item" style="width: 285px;"><div owl-carousel-item="" ng-include="'views/store/product-item.html'" ng-repeat="product in mostBoughtProducts" class="ng-scope"><!--Sección productos MÁS VENDIDOS en el index-->
+        <div class="thumbnail scope">
+          <img alt="imagen del producto">
+          <div class="row productFootnote ng-binding">
+            Cellacom m232
+          </div>
+          <div class="info-overlay">
+            <div class="row upper-overlay">
+              <a ui-sref="products.details({productFriendlyUrl:product.friendlyUrl})" ui-sref-opts="{reload: true}" href="/productos/cellacom-m232">
+                <div class="col-xs-8 center-wing"></div>
+              </a>
+            </div>
+            <div class="row lower-overlay">
+              <div class="row upper-row">
+                <!--Variante color-->
+                <div class="row productVariantSelect" ng-show="product.variantsOptions.length">
+                  <select class="form-control color-selector ng-pristine ng-untouched ng-valid ng-empty" ng-options="item.id as item.label for item in product.variantsOptions track by item.id" ng-model="product.selectedVariant"><option value="" disabled="" class="ng-binding" selected="selected">Color</option><option label="Negro" value="0541b840-3f65-11e8-b2d5-d77659aafa98">Negro</option><option label="Rojo" value="05a4bfd0-3f65-11e8-b2d5-d77659aafa98">Rojo</option><option label="Azul" value="05aa8c30-3f65-11e8-b2d5-d77659aafa98">Azul</option><option label="Rosa" value="05afe360-3f65-11e8-b2d5-d77659aafa98">Rosa</option></select>
+                </div>
+                <!--Precios-->
+                <span id="original-price" class="ng-binding">
+                  $300.00
+                </span>
+                <span id="discount-price" class="ng-binding">
+                  $1.08
+                </span>
+                <span id="total-saving" class="ng-binding">
+                  Ahorra: $298.92
+                </span>
+              </div>
+              <div class="row middle-row">
+                <span class="buttons-span">
+                  <!---Calculadora de compras flotante-->
+                  <button class="button multiplicame-button" ng-click="showQuickCalculator(product)"></button>
+                  <!--Calculadora-->
+                  <input type="number" min="1" step="1" class="multiplicame-field safari-text-fields ng-pristine ng-untouched ng-valid ng-empty ng-valid-min ng-valid-step" ng-model="product.multiplicameQuantity" ng-change="calculateMultiplicamePrice(product)">
+                </span>
+                <!--Monto por la cantidad de productos indicado-->
+                <span id="discount-price" class="safari-text-fields ng-binding">
+                  
+                </span>
+                <!--Cantidad ahorro-->
+                <span id="total-saving" class="safari-text-fields ng-binding">
+                  Ahorra: 
+                </span>
+              </div>
+              <!--Ventana flotante para comparar productos-->
+              <div class="row lower-row">
+                <span class="buttons-span">
+                  <!--Añadir item para comparar-->
+                  <button class="button compareTo" ng-click="addCompareToProduct(product)">
+                    Comparar
+                  </button>
+                  <!--Muestra una ventana flotante de las caracteristicas del producto-->
+                  <button class="button vistaRapida-button" ng-click="showQuickProductDetails(product)"></button>
+                  <!--Añadir producto al carrito de compras-->
+                  <button class="button agregaCarrito-button" ng-click="addToCart(product)"></button>
+                  <!--Iniciar proceso de compra-->
+                  <button class="button comprarYa-button" ng-click="buyNow(product)"></button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div></div><div class="owl-item" style="width: 285px;"><div owl-carousel-item="" ng-include="'views/store/product-item.html'" ng-repeat="product in mostBoughtProducts" class="ng-scope"><!--Sección productos MÁS VENDIDOS en el index-->
+        <div class="thumbnail ng-scope">
+          <img alt="imagen del producto">
+          <div class="row productFootnote ng-binding">
+            NYX eje plo
+          </div>
+          <div class="info-overlay">
+            <div class="row upper-overlay">
+              <a ui-sref="products.details({productFriendlyUrl:product.friendlyUrl})" ui-sref-opts="{reload: true}" href="/productos/nyx-eje-plo">
+                <div class="col-xs-8 center-wing"></div>
+              </a>
+            </div>
+            <div class="row lower-overlay">
+              <div class="row upper-row">
+                <!--Variante color-->
+                <div class="row productVariantSelect ng-hide" ng-show="product.variantsOptions.length">
+                  <select class="form-control color-selector ng-pristine ng-untouched ng-valid ng-empty" ng-options="item.id as item.label for item in product.variantsOptions track by item.id" ng-model="product.selectedVariant"><option value="" disabled="" class="ng-binding" selected="selected"></option></select>
+                </div>
+                <!--Precios-->
+                <span id="original-price" class="ng-binding">
+                  $1,000.00
+                </span>
+                <span id="discount-price" class="ng-binding">
+                  $1.10
+                </span>
+                <span id="total-saving" class="ng-binding">
+                  Ahorra: $998.90
+                </span>
+              </div>
+              <div class="row middle-row">
+                <span class="buttons-span">
+                  <!---Calculadora de compras flotante-->
+                  <button class="button multiplicame-button" ng-click="showQuickCalculator(product)"></button>
+                  <!--Calculadora-->
+                  <input type="number" min="1" step="1" class="multiplicame-field safari-text-fields ng-pristine ng-untouched ng-valid ng-empty ng-valid-min ng-valid-step" ng-model="product.multiplicameQuantity" ng-change="calculateMultiplicamePrice(product)">
+                </span>
+                <!--Monto por la cantidad de productos indicado-->
+                <span id="discount-price" class="safari-text-fields ng-binding">
+                  
+                </span>
+                <!--Cantidad ahorro-->
+                <span id="total-saving" class="safari-text-fields ng-binding">
+                  Ahorra: 
+                </span>
+              </div>
+              <!--Ventana flotante para comparar productos-->
+              <div class="row lower-row">
+                <span class="buttons-span">
+                  <!--Añadir item para comparar-->
+                  <button class="button compareTo" ng-click="addCompareToProduct(product)">
+                    Comparar
+                  </button>
+                  <!--Muestra una ventana flotante de las caracteristicas del producto-->
+                  <button class="button vistaRapida-button" ng-click="showQuickProductDetails(product)"></button>
+                  <!--Añadir producto al carrito de compras-->
+                  <button class="button agregaCarrito-button" ng-click="addToCart(product)"></button>
+                  <!--Iniciar proceso de compra-->
+                  <button class="button comprarYa-button" ng-click="buyNow(product)"></button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div></div><div class="owl-item" style="width: 285px;"><div owl-carousel-item="" ng-include="'views/store/product-item.html'" ng-repeat="product in mostBoughtProducts" class="ng-scope"><!--Sección productos MÁS VENDIDOS en el index-->
+        <div class="thumbnail ng-scope">
+          <img alt="imagen del producto" ng-src="https://s3.amazonaws.com/multiplicamemedia/item_XL_23299011_33123586-tjxzgZoXYI.jpg" src="https://s3.amazonaws.com/multiplicamemedia/item_XL_23299011_33123586-tjxzgZoXYI.jpg">
+          <div class="row productFootnote ng-binding">
+            Huawei Y5 2017
+          </div>
+          <div class="info-overlay">
+            <div class="row upper-overlay">
+              <a ui-sref="products.details({productFriendlyUrl:product.friendlyUrl})" ui-sref-opts="{reload: true}" href="/productos/huawei-y5-2017">
+                <div class="col-xs-8 center-wing"></div>
+              </a>
+            </div>
+            <div class="row lower-overlay">
+              <div class="row upper-row">
+                <!--Variante color-->
+                <div class="row productVariantSelect" ng-show="product.variantsOptions.length">
+                  <select class="form-control color-selector ng-pristine ng-untouched ng-valid ng-empty" ng-options="item.id as item.label for item in product.variantsOptions track by item.id" ng-model="product.selectedVariant"><option value="" disabled="" class="ng-binding" selected="selected">Color</option><option label="Gris" value="2f96dfa0-426f-11e8-8943-afc2108a6c28">Gris</option><option label="Dorado" value="2fb7d520-426f-11e8-8943-afc2108a6c28">Dorado</option></select>
+                </div>
+                <!--Precios-->
+                <span id="original-price" class="ng-binding">
+                  $1.00
+                </span>
+                <span id="discount-price" class="ng-binding">
+                  $1.12
+                </span>
+                <span id="total-saving" class="ng-binding">
+                  Ahorra: -$0.12
+                </span>
+              </div>
+              <div class="row middle-row">
+                <span class="buttons-span">
+                  <!---Calculadora de compras flotante-->
+                  <button class="button multiplicame-button" ng-click="showQuickCalculator(product)"></button>
+                  <!--Calculadora-->
+                  <input type="number" min="1" step="1" class="multiplicame-field safari-text-fields ng-pristine ng-untouched ng-valid ng-empty ng-valid-min ng-valid-step" ng-model="product.multiplicameQuantity" ng-change="calculateMultiplicamePrice(product)">
+                </span>
+                <!--Monto por la cantidad de productos indicado-->
+                <span id="discount-price" class="safari-text-fields ng-binding">
+                  
+                </span>
+                <!--Cantidad ahorro-->
+                <span id="total-saving" class="safari-text-fields ng-binding">
+                  Ahorra: 
+                </span>
+              </div>
+              <!--Ventana flotante para comparar productos-->
+              <div class="row lower-row">
+                <span class="buttons-span">
+                  <!--Añadir item para comparar-->
+                  <button class="button compareTo" ng-click="addCompareToProduct(product)">
+                    Comparar
+                  </button>
+                  <!--Muestra una ventana flotante de las caracteristicas del producto-->
+                  <button class="button vistaRapida-button" ng-click="showQuickProductDetails(product)"></button>
+                  <!--Añadir producto al carrito de compras-->
+                  <button class="button agregaCarrito-button" ng-click="addToCart(product)"></button>
+                  <!--Iniciar proceso de compra-->
+                  <button class="button comprarYa-button" ng-click="buyNow(product)"></button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div></div><div class="owl-item" style="width: 285px;"><div owl-carousel-item="" ng-include="'views/store/product-item.html'" ng-repeat="product in mostBoughtProducts" class="ng-scope"><!--Sección productos MÁS VENDIDOS en el index-->
+        <div class="thumbnail ng-scope">
+          <img alt="imagen del producto">
+          <div class="row productFootnote ng-binding">
+            Cellacom m232
+          </div>
+          <div class="info-overlay">
+            <div class="row upper-overlay">
+              <a ui-sref="products.details({productFriendlyUrl:product.friendlyUrl})" ui-sref-opts="{reload: true}" href="/productos/cellacom-m232">
+                <div class="col-xs-8 center-wing"></div>
+              </a>
+            </div>
+            <div class="row lower-overlay">
+              <div class="row upper-row">
+                <!--Variante color-->
+                <div class="row productVariantSelect" ng-show="product.variantsOptions.length">
+                  <select class="form-control color-selector ng-pristine ng-untouched ng-valid ng-empty" ng-options="item.id as item.label for item in product.variantsOptions track by item.id" ng-model="product.selectedVariant"><option value="" disabled="" class="ng-binding" selected="selected">Color</option><option label="Negro" value="0541b840-3f65-11e8-b2d5-d77659aafa98">Negro</option><option label="Rojo" value="05a4bfd0-3f65-11e8-b2d5-d77659aafa98">Rojo</option><option label="Azul" value="05aa8c30-3f65-11e8-b2d5-d77659aafa98">Azul</option><option label="Rosa" value="05afe360-3f65-11e8-b2d5-d77659aafa98">Rosa</option></select>
+                </div>
+                <!--Precios-->
+                <span id="original-price" class="ng-binding">
+                  $300.00
+                </span>
+                <span id="discount-price" class="ng-binding">
+                  $1.08
+                </span>
+                <span id="total-saving" class="ng-binding">
+                  Ahorra: $298.92
+                </span>
+              </div>
+              <div class="row middle-row">
+                <span class="buttons-span">
+                  <!---Calculadora de compras flotante-->
+                  <button class="button multiplicame-button" ng-click="showQuickCalculator(product)"></button>
+                  <!--Calculadora-->
+                  <input type="number" min="1" step="1" class="multiplicame-field safari-text-fields ng-pristine ng-untouched ng-valid ng-empty ng-valid-min ng-valid-step" ng-model="product.multiplicameQuantity" ng-change="calculateMultiplicamePrice(product)">
+                </span>
+                <!--Monto por la cantidad de productos indicado-->
+                <span id="discount-price" class="safari-text-fields ng-binding">
+                  
+                </span>
+                <!--Cantidad ahorro-->
+                <span id="total-saving" class="safari-text-fields ng-binding">
+                  Ahorra: 
+                </span>
+              </div>
+              <!--Ventana flotante para comparar productos-->
+              <div class="row lower-row">
+                <span class="buttons-span">
+                  <!--Añadir item para comparar-->
+                  <button class="button compareTo" ng-click="addCompareToProduct(product)">
+                    Comparar
+                  </button>
+                  <!--Muestra una ventana flotante de las caracteristicas del producto-->
+                  <button class="button vistaRapida-button" ng-click="showQuickProductDetails(product)"></button>
+                  <!--Añadir producto al carrito de compras-->
+                  <button class="button agregaCarrito-button" ng-click="addToCart(product)"></button>
+                  <!--Iniciar proceso de compra-->
+                  <button class="button comprarYa-button" ng-click="buyNow(product)"></button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div></div><div class="owl-item" style="width: 285px;"><div owl-carousel-item="" ng-include="'views/store/product-item.html'" ng-repeat="product in mostBoughtProducts" class="ng-scope"><!--Sección productos MÁS VENDIDOS en el index-->
+        <div class="thumbnail ng-scope">
+          <img alt="imagen del producto" ng-src="https://s3.amazonaws.com/multiplicamemedia/q6 prime-z1LqrWxzjU.png" src="https://s3.amazonaws.com/multiplicamemedia/q6 prime-z1LqrWxzjU.png">
+          <div class="row productFootnote ng-binding">
+            LG Q6 Prime
+          </div>
+          <div class="info-overlay">
+            <div class="row upper-overlay">
+              <a ui-sref="products.details({productFriendlyUrl:product.friendlyUrl})" ui-sref-opts="{reload: true}" href="/productos/lg-q6-prime">
+                <div class="col-xs-8 center-wing"></div>
+              </a>
+            </div>
+            <div class="row lower-overlay">
+              <div class="row upper-row">
+                <!--Variante color-->
+                <div class="row productVariantSelect" ng-show="product.variantsOptions.length">
+                  <select class="form-control color-selector ng-pristine ng-untouched ng-valid ng-empty" ng-options="item.id as item.label for item in product.variantsOptions track by item.id" ng-model="product.selectedVariant"><option value="" disabled="" class="ng-binding" selected="selected">Color</option><option label="Blanco" value="0dcac960-0cf3-11e8-8c6e-eb26ba8331f2">Blanco</option><option label="Dorado" value="0dfbeb80-0cf3-11e8-8c6e-eb26ba8331f2">Dorado</option><option label="Gris" value="0e027b30-0cf3-11e8-8c6e-eb26ba8331f2">Gris</option></select>
+                </div>
+                <!--Precios-->
+                <span id="original-price" class="ng-binding">
+                  $6,599.00
+                </span>
+                <span id="discount-price" class="ng-binding">
+                  $6,264.00
+                </span>
+                <span id="total-saving" class="ng-binding">
+                  Ahorra: $335.00
+                </span>
+              </div>
+              <div class="row middle-row">
+                <span class="buttons-span">
+                  <!---Calculadora de compras flotante-->
+                  <button class="button multiplicame-button" ng-click="showQuickCalculator(product)"></button>
+                  <!--Calculadora-->
+                  <input type="number" min="1" step="1" class="multiplicame-field safari-text-fields ng-pristine ng-untouched ng-valid ng-empty ng-valid-min ng-valid-step" ng-model="product.multiplicameQuantity" ng-change="calculateMultiplicamePrice(product)">
+                </span>
+                <!--Monto por la cantidad de productos indicado-->
+                <span id="discount-price" class="safari-text-fields ng-binding">
+                  
+                </span>
+                <!--Cantidad ahorro-->
+                <span id="total-saving" class="safari-text-fields ng-binding">
+                  Ahorra: 
+                </span>
+              </div>
+              <!--Ventana flotante para comparar productos-->
+              <div class="row lower-row">
+                <span class="buttons-span">
+                  <!--Añadir item para comparar-->
+                  <button class="button compareTo" ng-click="addCompareToProduct(product)">
+                    Comparar
+                  </button>
+                  <!--Muestra una ventana flotante de las caracteristicas del producto-->
+                  <button class="button vistaRapida-button" ng-click="showQuickProductDetails(product)"></button>
+                  <!--Añadir producto al carrito de compras-->
+                  <button class="button agregaCarrito-button" ng-click="addToCart(product)"></button>
+                  <!--Iniciar proceso de compra-->
+                  <button class="button comprarYa-button" ng-click="buyNow(product)"></button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div></div><div class="owl-item" style="width: 285px;"><div owl-carousel-item="" ng-include="'views/store/product-item.html'" ng-repeat="product in mostBoughtProducts" class="ng-scope"><!--Sección productos MÁS VENDIDOS en el index-->
+        <div class="thumbnail ng-scope">
+          <img alt="imagen del producto" ng-src="https://s3.amazonaws.com/multiplicamemedia/iphone 6-5-nFwa2t9RlQ.png" src="https://s3.amazonaws.com/multiplicamemedia/iphone 6-5-nFwa2t9RlQ.png">
+          <div class="row productFootnote ng-binding">
+            Apple iPhone 6 32Gb
+          </div>
+          <div class="info-overlay">
+            <div class="row upper-overlay">
+              <a ui-sref="products.details({productFriendlyUrl:product.friendlyUrl})" ui-sref-opts="{reload: true}" href="/productos/apple-iphone-6-32gb">
+                <div class="col-xs-8 center-wing"></div>
+              </a>
+            </div>
+            <div class="row lower-overlay">
+              <div class="row upper-row">
+                <!--Variante color-->
+                <div class="row productVariantSelect ng-hide" ng-show="product.variantsOptions.length">
+                  <select class="form-control color-selector ng-pristine ng-untouched ng-valid ng-empty" ng-options="item.id as item.label for item in product.variantsOptions track by item.id" ng-model="product.selectedVariant"><option value="" disabled="" class="ng-binding" selected="selected"></option></select>
+                </div>
+                <!--Precios-->
+                <span id="original-price" class="ng-binding">
+                  $8,999.00
+                </span>
+                <span id="discount-price" class="ng-binding">
+                  $8,352.00
+                </span>
+                <span id="total-saving" class="ng-binding">
+                  Ahorra: $647.00
+                </span>
+              </div>
+              <div class="row middle-row">
+                <span class="buttons-span">
+                  <!---Calculadora de compras flotante-->
+                  <button class="button multiplicame-button" ng-click="showQuickCalculator(product)"></button>
+                  <!--Calculadora-->
+                  <input type="number" min="1" step="1" class="multiplicame-field safari-text-fields ng-pristine ng-untouched ng-valid ng-empty ng-valid-min ng-valid-step" ng-model="product.multiplicameQuantity" ng-change="calculateMultiplicamePrice(product)">
+                </span>
+                <!--Monto por la cantidad de productos indicado-->
+                <span id="discount-price" class="safari-text-fields ng-binding">
+                  
+                </span>
+                <!--Cantidad ahorro-->
+                <span id="total-saving" class="safari-text-fields ng-binding">
+                  Ahorra: 
+                </span>
+              </div>
+              <!--Ventana flotante para comparar productos-->
+              <div class="row lower-row">
+                <span class="buttons-span">
+                  <!--Añadir item para comparar-->
+                  <button class="button compareTo" ng-click="addCompareToProduct(product)">
+                    Comparar
+                  </button>
+                  <!--Muestra una ventana flotante de las caracteristicas del producto-->
+                  <button class="button vistaRapida-button" ng-click="showQuickProductDetails(product)"></button>
+                  <!--Añadir producto al carrito de compras-->
+                  <button class="button agregaCarrito-button" ng-click="addToCart(product)"></button>
+                  <!--Iniciar proceso de compra-->
+                  <button class="button comprarYa-button" ng-click="buyNow(product)"></button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div></div></div></div><!-- end ngRepeat: product in mostBoughtProducts --><!-- ngInclude: 'views/store/product-item.html' --><!-- end ngRepeat: product in mostBoughtProducts --><!-- ngInclude: 'views/store/product-item.html' --><!-- end ngRepeat: product in mostBoughtProducts --><!-- ngInclude: 'views/store/product-item.html' --><!-- end ngRepeat: product in mostBoughtProducts --><!-- ngInclude: 'views/store/product-item.html' --><!-- end ngRepeat: product in mostBoughtProducts --><!-- ngInclude: 'views/store/product-item.html' --><!-- end ngRepeat: product in mostBoughtProducts -->
+                <div class="owl-controls clickable"><div class="owl-buttons"><div class="owl-prev"><img src="img/next-small-orange.png"></div><div class="owl-next"><img src="img/prev-small-orange.png"></div></div></div></data-owl-carousel>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--=======================================================-->
+        <!--                   Categroías                          -->
+        <!--=======================================================-->
+        <div id="categorias-container" class="container ng-scope">
+          <h5 class="categorias">
+            CATEGORÍAS
+          </h5>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="item">
+                <data-owl-carousel class="owl-carousel owl-categorias owl-theme" data-options="owlVendidos" style="opacity: 1; display: block;">
+                  <!-- ngRepeat: category in category --><!-- ngInclude: 'views/store/item-category.html' --><div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 570px; left: 0px; display: block; transition: all 1000ms ease; transform: translate3d(0px, 0px, 0px);"><div class="owl-item" style="width: 285px;"><div owl-carousel-item="" ng-include="'views/store/item-category.html'" ng-repeat="category in category" class="ng-scope"><!--Mostrar los producto en categoría-->
+        <div class="thumbnail ng-scope">
+          <img alt="imagen del producto" ng-src="https://s3.amazonaws.com/multiplicamemedia/senwa 456-NQx8Wvw99x.png" src="https://s3.amazonaws.com/multiplicamemedia/senwa 456-NQx8Wvw99x.png">
+          <div class="info-overlay">
+            <div class="row upper-overlay">
+              <h3 class="categorias-tag ng-binding">Celulares</h3>
+            </div>
+            <a>
+              <div class="row middle-overlay"></div>
+            </a>
+            <div class="row lower-overlay">
+              <a ui-sref="category({categoryTag:category.contents.name})" href="/categoria/Celulares">
+                <span class="buttons-span">
+                  <button type="button" class="button verProductos-button"></button>
+                </span>
+              </a>
+              <div class="categorias-prize">Desde $2399</div>
+            </div>
+          </div>
+        </div>
+        </div></div></div></div><!-- end ngRepeat: category in category -->
+                <div class="owl-controls clickable" style="display: none;"><div class="owl-buttons"><div class="owl-prev"><img src="img/next-small-orange.png"></div><div class="owl-next"><img src="img/prev-small-orange.png"></div></div></div></data-owl-carousel>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--=======================================================-->
+        <!--                     Hot sale                          -->
+        <!--=======================================================-->
+        <div id="hot-container" class="container ng-scope">
+          <h3 class="hot-sale">
+            <span class="hot-sale-red">HOT</span>
+            <span class="hot-sale-orange">SALE</span>
+          </h3>
+          <data-owl-carousel class="owl-carousel owl-hot owl-theme" data-options="owlHot" style="opacity: 1; display: block;">
+            <!-- ngRepeat: product in hotSaleProducts --><!-- ngInclude: 'views/store/product-item-hot-sale.html' --><div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 2850px; left: 0px; display: block; transition: all 600ms ease; transform: translate3d(-285px, 0px, 0px);"><div class="owl-item" style="width: 285px;"><div owl-carousel-item="" ng-include="'views/store/product-item-hot-sale.html'" ng-repeat="product in hotSaleProducts" class="item ng-scope"><!--Sección de los productos en HOT SALE del index https://multiplicame.com/inicio-->
+        <div class="thumbnail ng-scope">
+          <img alt="imagen del producto" class="product-img" ng-show="product.media[0]" ng-src="https://s3.amazonaws.com/multiplicamemedia/u5-1-y34spYtAin.png" src="https://s3.amazonaws.com/multiplicamemedia/u5-1-y34spYtAin.png">
+          <div class="info-overlay">
+            <div class="row upper-overlay">
+              <span class="hot-tag ng-binding">
+                Regular $2,299.00
+              </span>
+            </div>
+            <a ui-sref="products.details({productFriendlyUrl:product.friendlyUrl})" ui-sref-opts="{reload: true}" href="/productos/alcatel-u5-plus-edition">
+              <div class="row middle-overlay"></div>
+            </a>
+            <div class="row lower-overlay">
+              <!--Nombre y precio del producto-->
+              <div class="hotSale-ribbon ng-binding">
+                Alcatel U5 Plus...
+                <span class="red-span ng-binding">$1,988.00</span>
+              </div>
+              <div class="hot-prize ng-binding">
+                Hot Sale Termina en 18 días
+              </div>
+              <!--Seleccionar variante color-->
+              <div class="row productVariantSelect" ng-show="product.variantsOptions.length">
+                <select class="form-control color-selector ng-pristine ng-untouched ng-valid ng-empty" ng-model="product.selectedVariant" ng-options="item.id as item.label for item in product.variantsOptions track by item.id"><option value="" disabled="" class="ng-binding" selected="selected">Color</option><option label="Negro" value="3de3e430-0cfb-11e8-8c6e-eb26ba8331f2">Negro</option><option label="Rosa" value="3e0500c0-0cfb-11e8-8c6e-eb26ba8331f2">Rosa</option><option label="Dorado" value="3e0acd20-0cfb-11e8-8c6e-eb26ba8331f2">Dorado</option></select>
+              </div>
+              <div class="calc-row">
+                <span class="buttons-span">
+                  <!--Calculadora de Compras flotante-->
+                  <button class="button multiplicame-button" ng-click="showQuickCalculator(product)"></button>
+                  <!--Calculadora-->
+                  <button class="calc-minus-button calc-button" ng-click="addMultiplicameAmount(product,-1,true)">-</button>
+                  <button class="calc-plus-button calc-button" ng-click="addMultiplicameAmount(product,1,true)">+</button>
+                  <input type="number" class="calc-first-field calc-field ng-pristine ng-untouched ng-valid ng-empty ng-valid-min ng-valid-step" min="1" step="1" ng-model="product.multiplicameQuantity" ng-change="calculateHotSalePrice(product)">
+                  <input type="text" class="calc-second-field calc-field ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" readonly="" ng-model="product.multiplicamePrice">
+                </span>
+              </div>
+              <div class="last-row">
+                <span class="buttons-span">
+                  <!--Vista flotante con las caracteristicas del producto-->
+                  <button class="button vistaRapida-button hidden-xs" ng-click="showQuickProductDetails(product)"></button>
+                  <!--Botón agregar producto al carrito de compras-->
+                  <button class="button agregaCarrito-button" ng-click="addToCart(product)"></button>
+                  <!--Botnón iniciar proceso de compra-->
+                  <button class="button comprarYa-button" ng-click="buyNow(product)"></button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div></div><div class="owl-item" style="width: 285px;"><div owl-carousel-item="" ng-include="'views/store/product-item-hot-sale.html'" ng-repeat="product in hotSaleProducts" class="item ng-scope"><!--Sección de los productos en HOT SALE del index https://multiplicame.com/inicio-->
+        <div class="thumbnail ng-scope">
+          <img alt="imagen del producto" class="product-img" ng-show="product.media[0]" ng-src="https://s3.amazonaws.com/multiplicamemedia/ilium-x110-01-t7i6T3W6p8.png" src="https://s3.amazonaws.com/multiplicamemedia/ilium-x110-01-t7i6T3W6p8.png">
+          <div class="info-overlay">
+            <div class="row upper-overlay">
+              <span class="hot-tag ng-binding">
+                Regular $949.00
+              </span>
+            </div>
+            <a ui-sref="products.details({productFriendlyUrl:product.friendlyUrl})" ui-sref-opts="{reload: true}" href="/productos/lanix-ilium-x110">
+              <div class="row middle-overlay"></div>
+            </a>
+            <div class="row lower-overlay">
+              <!--Nombre y precio del producto-->
+              <div class="hotSale-ribbon ng-binding">
+                Lanix Ilium X110
+                <span class="red-span ng-binding">$820.00</span>
+              </div>
+              <div class="hot-prize ng-binding">
+                Hot Sale Termina en 18 días
+              </div>
+              <!--Seleccionar variante color-->
+              <div class="row productVariantSelect" ng-show="product.variantsOptions.length">
+                <select class="form-control color-selector ng-pristine ng-untouched ng-valid ng-empty" ng-model="product.selectedVariant" ng-options="item.id as item.label for item in product.variantsOptions track by item.id"><option value="" disabled="" class="ng-binding" selected="selected">Color</option><option label="Negro" value="fe0576c0-0c2e-11e8-a7ce-4d7cfd486d7f">Negro</option><option label="Blanco" value="fe23ad20-0c2e-11e8-a7ce-4d7cfd486d7f">Blanco</option></select>
+              </div>
+              <div class="calc-row">
+                <span class="buttons-span">
+                  <!--Calculadora de Compras flotante-->
+                  <button class="button multiplicame-button" ng-click="showQuickCalculator(product)"></button>
+                  <!--Calculadora-->
+                  <button class="calc-minus-button calc-button" ng-click="addMultiplicameAmount(product,-1,true)">-</button>
+                  <button class="calc-plus-button calc-button" ng-click="addMultiplicameAmount(product,1,true)">+</button>
+                  <input type="number" class="calc-first-field calc-field ng-pristine ng-untouched ng-valid ng-empty ng-valid-min ng-valid-step" min="1" step="1" ng-model="product.multiplicameQuantity" ng-change="calculateHotSalePrice(product)">
+                  <input type="text" class="calc-second-field calc-field ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" readonly="" ng-model="product.multiplicamePrice">
+                </span>
+              </div>
+              <div class="last-row">
+                <span class="buttons-span">
+                  <!--Vista flotante con las caracteristicas del producto-->
+                  <button class="button vistaRapida-button hidden-xs" ng-click="showQuickProductDetails(product)"></button>
+                  <!--Botón agregar producto al carrito de compras-->
+                  <button class="button agregaCarrito-button" ng-click="addToCart(product)"></button>
+                  <!--Botnón iniciar proceso de compra-->
+                  <button class="button comprarYa-button" ng-click="buyNow(product)"></button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div></div><div class="owl-item" style="width: 285px;"><div owl-carousel-item="" ng-include="'views/store/product-item-hot-sale.html'" ng-repeat="product in hotSaleProducts" class="item ng-scope"><!--Sección de los productos en HOT SALE del index https://multiplicame.com/inicio-->
+        <div class="thumbnail ng-scope">
+          <img alt="imagen del producto" class="product-img" ng-show="product.media[0]" ng-src="https://s3.amazonaws.com/multiplicamemedia/ilium-x220-01-9jRq6vxnBP.png" src="https://s3.amazonaws.com/multiplicamemedia/ilium-x220-01-9jRq6vxnBP.png">
+          <div class="info-overlay">
+            <div class="row upper-overlay">
+              <span class="hot-tag ng-binding">
+                Regular $1,239.00
+              </span>
+            </div>
+            <a ui-sref="products.details({productFriendlyUrl:product.friendlyUrl})" ui-sref-opts="{reload: true}" href="/productos/lanix-ilium-x220">
+              <div class="row middle-overlay"></div>
+            </a>
+            <div class="row lower-overlay">
+              <!--Nombre y precio del producto-->
+              <div class="hotSale-ribbon ng-binding">
+                Lanix Ilium X220
+                <span class="red-span ng-binding">$844.00</span>
+              </div>
+              <div class="hot-prize ng-binding">
+                Hot Sale Termina en 18 días
+              </div>
+              <!--Seleccionar variante color-->
+              <div class="row productVariantSelect ng-hide" ng-show="product.variantsOptions.length">
+                <select class="form-control color-selector ng-pristine ng-untouched ng-valid ng-empty" ng-model="product.selectedVariant" ng-options="item.id as item.label for item in product.variantsOptions track by item.id"><option value="" disabled="" class="ng-binding" selected="selected"></option></select>
+              </div>
+              <div class="calc-row">
+                <span class="buttons-span">
+                  <!--Calculadora de Compras flotante-->
+                  <button class="button multiplicame-button" ng-click="showQuickCalculator(product)"></button>
+                  <!--Calculadora-->
+                  <button class="calc-minus-button calc-button" ng-click="addMultiplicameAmount(product,-1,true)">-</button>
+                  <button class="calc-plus-button calc-button" ng-click="addMultiplicameAmount(product,1,true)">+</button>
+                  <input type="number" class="calc-first-field calc-field ng-pristine ng-untouched ng-valid ng-empty ng-valid-min ng-valid-step" min="1" step="1" ng-model="product.multiplicameQuantity" ng-change="calculateHotSalePrice(product)">
+                  <input type="text" class="calc-second-field calc-field ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" readonly="" ng-model="product.multiplicamePrice">
+                </span>
+              </div>
+              <div class="last-row">
+                <span class="buttons-span">
+                  <!--Vista flotante con las caracteristicas del producto-->
+                  <button class="button vistaRapida-button hidden-xs" ng-click="showQuickProductDetails(product)"></button>
+                  <!--Botón agregar producto al carrito de compras-->
+                  <button class="button agregaCarrito-button" ng-click="addToCart(product)"></button>
+                  <!--Botnón iniciar proceso de compra-->
+                  <button class="button comprarYa-button" ng-click="buyNow(product)"></button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div></div><div class="owl-item" style="width: 285px;"><div owl-carousel-item="" ng-include="'views/store/product-item-hot-sale.html'" ng-repeat="product in hotSaleProducts" class="item ng-scope"><!--Sección de los productos en HOT SALE del index https://multiplicame.com/inicio-->
+        <div class="thumbnail ng-scope">
+          <img alt="imagen del producto" class="product-img" ng-show="product.media[0]" ng-src="https://s3.amazonaws.com/multiplicamemedia/ilium-x520-01-1RpYWpL540.png" src="https://s3.amazonaws.com/multiplicamemedia/ilium-x520-01-1RpYWpL540.png">
+          <div class="info-overlay">
+            <div class="row upper-overlay">
+              <span class="hot-tag ng-binding">
+                Regular $1,699.00
+              </span>
+            </div>
+            <a ui-sref="products.details({productFriendlyUrl:product.friendlyUrl})" ui-sref-opts="{reload: true}" href="/productos/lanix-ilium-x520">
+              <div class="row middle-overlay"></div>
+            </a>
+            <div class="row lower-overlay">
+              <!--Nombre y precio del producto-->
+              <div class="hotSale-ribbon ng-binding">
+                Lanix Ilium X520
+                <span class="red-span ng-binding">$1,250.00</span>
+              </div>
+              <div class="hot-prize ng-binding">
+                Hot Sale Termina en 18 días
+              </div>
+              <!--Seleccionar variante color-->
+              <div class="row productVariantSelect" ng-show="product.variantsOptions.length">
+                <select class="form-control color-selector ng-pristine ng-untouched ng-valid ng-empty" ng-model="product.selectedVariant" ng-options="item.id as item.label for item in product.variantsOptions track by item.id"><option value="" disabled="" class="ng-binding" selected="selected">Color</option><option label="Plateado" value="9a0c1ea0-0c2c-11e8-a7ce-4d7cfd486d7f">Plateado</option><option label="Gris" value="9a2b6670-0c2c-11e8-a7ce-4d7cfd486d7f">Gris</option></select>
+              </div>
+              <div class="calc-row">
+                <span class="buttons-span">
+                  <!--Calculadora de Compras flotante-->
+                  <button class="button multiplicame-button" ng-click="showQuickCalculator(product)"></button>
+                  <!--Calculadora-->
+                  <button class="calc-minus-button calc-button" ng-click="addMultiplicameAmount(product,-1,true)">-</button>
+                  <button class="calc-plus-button calc-button" ng-click="addMultiplicameAmount(product,1,true)">+</button>
+                  <input type="number" class="calc-first-field calc-field ng-pristine ng-untouched ng-valid ng-empty ng-valid-min ng-valid-step" min="1" step="1" ng-model="product.multiplicameQuantity" ng-change="calculateHotSalePrice(product)">
+                  <input type="text" class="calc-second-field calc-field ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" readonly="" ng-model="product.multiplicamePrice">
+                </span>
+              </div>
+              <div class="last-row">
+                <span class="buttons-span">
+                  <!--Vista flotante con las caracteristicas del producto-->
+                  <button class="button vistaRapida-button hidden-xs" ng-click="showQuickProductDetails(product)"></button>
+                  <!--Botón agregar producto al carrito de compras-->
+                  <button class="button agregaCarrito-button" ng-click="addToCart(product)"></button>
+                  <!--Botnón iniciar proceso de compra-->
+                  <button class="button comprarYa-button" ng-click="buyNow(product)"></button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div></div><div class="owl-item" style="width: 285px;"><div owl-carousel-item="" ng-include="'views/store/product-item-hot-sale.html'" ng-repeat="product in hotSaleProducts" class="item ng-scope"><!--Sección de los productos en HOT SALE del index https://multiplicame.com/inicio-->
+        <div class="thumbnail ng-scope">
+          <img alt="imagen del producto" class="product-img" ng-show="product.media[0]" ng-src="https://s3.amazonaws.com/multiplicamemedia/senwa 456-NQx8Wvw99x.png" src="https://s3.amazonaws.com/multiplicamemedia/senwa 456-NQx8Wvw99x.png">
+          <div class="info-overlay">
+            <div class="row upper-overlay">
+              <span class="hot-tag ng-binding">
+                Regular $1,099.00
+              </span>
+            </div>
+            <a ui-sref="products.details({productFriendlyUrl:product.friendlyUrl})" ui-sref-opts="{reload: true}" href="/productos/senwa-jazz">
+              <div class="row middle-overlay"></div>
+            </a>
+            <div class="row lower-overlay">
+              <!--Nombre y precio del producto-->
+              <div class="hotSale-ribbon ng-binding">
+                Senwa Jazz
+                <span class="red-span ng-binding">$828.00</span>
+              </div>
+              <div class="hot-prize ng-binding">
+                Hot Sale Termina en 18 días
+              </div>
+              <!--Seleccionar variante color-->
+              <div class="row productVariantSelect ng-hide" ng-show="product.variantsOptions.length">
+                <select class="form-control color-selector ng-pristine ng-untouched ng-valid ng-empty" ng-model="product.selectedVariant" ng-options="item.id as item.label for item in product.variantsOptions track by item.id"><option value="" disabled="" class="ng-binding" selected="selected"></option></select>
+              </div>
+              <div class="calc-row">
+                <span class="buttons-span">
+                  <!--Calculadora de Compras flotante-->
+                  <button class="button multiplicame-button" ng-click="showQuickCalculator(product)"></button>
+                  <!--Calculadora-->
+                  <button class="calc-minus-button calc-button" ng-click="addMultiplicameAmount(product,-1,true)">-</button>
+                  <button class="calc-plus-button calc-button" ng-click="addMultiplicameAmount(product,1,true)">+</button>
+                  <input type="number" class="calc-first-field calc-field ng-pristine ng-untouched ng-valid ng-empty ng-valid-min ng-valid-step" min="1" step="1" ng-model="product.multiplicameQuantity" ng-change="calculateHotSalePrice(product)">
+                  <input type="text" class="calc-second-field calc-field ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off" readonly="" ng-model="product.multiplicamePrice">
+                </span>
+              </div>
+              <div class="last-row">
+                <span class="buttons-span">
+                  <!--Vista flotante con las caracteristicas del producto-->
+                  <button class="button vistaRapida-button hidden-xs" ng-click="showQuickProductDetails(product)"></button>
+                  <!--Botón agregar producto al carrito de compras-->
+                  <button class="button agregaCarrito-button" ng-click="addToCart(product)"></button>
+                  <!--Botnón iniciar proceso de compra-->
+                  <button class="button comprarYa-button" ng-click="buyNow(product)"></button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div></div></div></div><!-- end ngRepeat: product in hotSaleProducts --><!-- ngInclude: 'views/store/product-item-hot-sale.html' --><!-- end ngRepeat: product in hotSaleProducts --><!-- ngInclude: 'views/store/product-item-hot-sale.html' --><!-- end ngRepeat: product in hotSaleProducts --><!-- ngInclude: 'views/store/product-item-hot-sale.html' --><!-- end ngRepeat: product in hotSaleProducts --><!-- ngInclude: 'views/store/product-item-hot-sale.html' --><!-- end ngRepeat: product in hotSaleProducts -->
+          <div class="owl-controls clickable"><div class="owl-buttons"><div class="owl-prev"><img src="img/next-small-orange.png"></div><div class="owl-next"><img src="img/prev-small-orange.png"></div></div></div></data-owl-carousel>
+        </div>
+        <!--=======================================================-->
+        <!--                       Banner                          -->
+        <!--=======================================================-->
+        <div id="lower-banner" class="ng-scope">
+          <img alt="promocion" ng-src="img/banner-footer.png" width="100%" src="img/banner-footer.png">
+        </div>
+        </main>
+
+
+  </main>
+
+  <footer ng-show="!adminMode">
+
+
+      <div class="footer" ng-show="!adminMode">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-4">
+                <h4 class="footer-header">Contacto</h4>
+                <table class="footer-table">
+                <tr class="no-padding">
+                  <td class="phone-cell"><img class="phones" ng-src="img/phone.png" height="40px"></td>
+                  <td><p>+52 (55)-128-424</p><p>Lunes a Viernes: 9 a 6 pm</p><p class="last-phone-line">S&aacute;bados: 10.00am a 6.00pm </p></td>
+                </tr>
+                <tr>
+                  <td><img ng-src="img/mail.png" height="40px"></td><td><a href="mailto:contacto@multiplicame.com"><p>contacto@multiplicame.com</p></a></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="sociales-td">
+                    <a href="https://www.facebook.com/Multiplicame-134434467268809"><i class="icon- icon-facebook" style="color:#252525; font-size:25px; vertical-align: middle;"></i></a>
+                    <a href="https://twitter.com/multiplicame17"><i class="icon- icon-twitter" style="color:#252525; font-size:25px; vertical-align: middle;"></i></a>
+                    <a href="https://www.youtube.com/channel/UCzOa5EdbqWhPNph8lx20h8A"><i class="fa fa-youtube" style="color:#252525; font-size:25px; vertical-align: bottom;"></i></a>
+                    <a href="https://www.instagram.com/multiplicame/"><i class="icon- icon-instagram-logo" style="color:#252525; font-size:25px; vertical-align: middle;"></i></a>
+                    <a href="https://www.pinterest.com.mx/multiplicame/"><i class="icon- icon-pinterest-logo" style="color:#252525; font-size:25px; vertical-align: middle;"></i></a>
+                  </td>
+                </tr>
+                </table>
+              </div>
+              <div class="col-sm-4">
+              <h4 class="footer-header">Sobre nosotros</h4>
+                <table class="footer-table info-table">
+                  <tr><td><img ng-src="img/right-arrow-grey.png" height="12px"></td><td><a ui-sref="about-us">Qui&eacute;nes somos</a></td></tr>
+                  <tr><td><img ng-src="img/right-arrow-grey.png" height="12px"></td><td><a ui-sref="about-us">Misi&oacute;n</a></td></tr>
+                  <tr><td><img ng-src="img/right-arrow-grey.png" height="12px"></td><td><a ui-sref="about-us">Visi&oacute;n</a></td></tr>
+                  <tr><td><img ng-src="img/right-arrow-grey.png" height="12px"></td><td><a>Nuestra Historia</a></td></tr>
+                  <tr><td><img ng-src="img/right-arrow-grey.png" height="12px"></td><td><a>Servicios</a></td><tr>
+                  <!--<tr class="hidden-lg hidden-xs"><td><img ng-src="img/right-arrow-grey.png" height="12px"></td><td>Blog</td></tr>-->
+                </table>
+              </div>
+              <div class="col-sm-4">
+              <h4 class="footer-header">Cuenta y envíos</h4>
+                <table class="footer-table info-table">
+                  <tr><td><img ng-src="img/right-arrow-grey.png" height="12px"></td><td><a>Tu cuenta</a></td></tr>
+                  <tr><td><img ng-src="img/right-arrow-grey.png" height="12px"></td><td><a>Tarifas y pol&iacute;ticas de env&iacute;o</a></td></tr>
+                  <tr><td><img ng-src="img/right-arrow-grey.png" height="12px"></td><td><a>Reembolsos y reemplazos</a></td></tr>
+                  <tr><td><img ng-src="img/right-arrow-grey.png" height="12px"></td><td><a ui-sref="guarantee-policy">Políticas de garantía</a></td></tr>
+                  <!--<tr><td><img ng-src="img/right-arrow-grey.png" height="12px"></td><td><a>Impuestos</a></td></tr>-->
+                  <tr><td><img ng-src="img/right-arrow-grey.png" height="12px"></td><td><a ui-sref="shipping">Informaci&oacute;n de env&iacute;o</a></td><tr>
+                  <!--<tr><td><img ng-src="img/right-arrow-grey.png" height="12px"></td><td><a>Programa de afiliaci&oacute;n</a></td></tr>-->
+                </table>
+              </div>
+            </div>
+            <hr>
+            <div class="row lower-footer">
+              <div class="col-xs col-sm-8">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <img ng-src="img/paypal.png">
+                  </div>
+                  <div class="col-xs-4">
+                    <img ng-src="img/visa.png">
+                  </div>
+                  <div class="col-xs-3" style="display:none;">
+                    <img ng-src="img/americanExpress.png">
+                  </div>
+                  <div class="col-xs-4">
+                    <img ng-src="img/masterCard.png" height="54px;">
+                  </div>
+                </div>
+              </div>
+              <!--<div class="col-xs col-sm-4 hidden-lg hidden-xs">
+                <p class="footer-text">Suscribete a nuestro boletín para recibir ofertas, novedades, descuentos e infomación sobre nuestras promociones.</p>
+                <table class="mail-table"><tr><td>
+                <input type="text" class="footer-input rounded" placeholder="Tu direcci&oacute;n de correo electr&oacute;nico.">
+                <button class="footer-submit"></button>
+                </td></tr></table>
+              </div>-->
+            </div><br><br>
+            <div class="help-footer">
+              <div class="row">
+                <div class="col-md-2 col-md-offset-1">Copyright 2017 &#x24B8; Multipl&iacute;came</div>
+                <!--<div class="col-md-2"><a>Trabaja con nosotros</a></div>-->
+                <div class="col-md-2 with-border-left"><a ui-sref="terms-conditions">T&eacute;rminos y condiciones</a></div>
+                <div class="col-md-2 with-border-left"><a ui-sref="privacy-policy">Aviso de privacidad</a></div>
+                <div class="col-md-2 with-border-left"><a ui-sref="help">Ayuda</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--=================================-->
+  <!--           Modal Danger          -->
+  <!--=================================-->
+  <div class="modal fade" id="genericModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify {{genericModal.modalType}}" role="document">
+      <!--Contenido-->
+      <div class="modal-content">
+        <!--Encabezado-->
+        <div class="modal-header">
+          <p class="heading lead"><span class="{{genericModal.icon}}"></span> {{genericModal.title}}</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="white-text">&times;</span>
+          </button>
+        </div>
+        <!--Cuerpo-->
+        <div class="modal-body">
+          <div class="text-center" ng-bind-html="genericModal.body">
+          </div>
+        </div>
+        <!--Pie de página-->
+        <div class="modal-footer justify-content-center">
+          <a type="button" class="btnModal btn-outline-secondary-modal waves-effect" data-dismiss="modal" ng-hide="genericModal.hideCancel">{{genericModal.cancelLabel}}</a>
+          <a type="button" class="btnModal btn-primary-modal" ng-click="genericModalAccept()">{{genericModal.acceptLabel}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--======================================-->
+  <!--           Modal Information          -->
+  <!--======================================-->
+  <div class="modal fade" id="centralModalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+      <!--Contenido-->
+      <div class="modal-content">
+        <!--Encabezado-->
+        <div class="modal-header">
+          <p class="heading lead"><span class="{{genericModal.icon}}"></span> {{genericModal.title}}</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="white-text">&times;</span>
+          </button>
+        </div>
+        <!--Cuerpo-->
+        <div class="modal-body">
+          <div class="text-center" ng-bind-html="centralModalInfo.body"></div>
+        </div>
+        <!--Pie de página-->
+        <div class="modal-footer justify-content-center">
+          <a type="button" class="btnModal btn-outline-secondary-modal waves-effect" data-dismiss="modal" ng-hide="genericModal.hideCancel">{{genericModal.cancelLabel}}</a>
+          <a type="button" class="btnModal btn-primary-modal" ng-click="genericModalAccept()">{{genericModal.acceptLabel}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--======================================-->
+  <!--             Modal Warning            -->
+  <!--======================================-->
+  <div class="modal fade" id="centralModalWarning" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-warning" role="document">
+      <!--Contenido-->
+      <div class="modal-content">
+        <!--Encabezado-->
+        <div class="modal-header">
+          <p class="heading lead"><span class="{{centralModalWarning.icon}}"></span> {{centralModalWarning.title}}</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="white-text">&times;</span>
+          </button>
+        </div>
+        <!--Cuerpo-->
+        <div class="modal-body">
+          <div class="text-center"  ng-bind-html="centralModalWarning.body"></div>
+        </div>
+        <!--Pie de página-->
+        <div class="modal-footer justify-content-center">
+          <a type="button" class="btnModal btn-outline-secondary-modal waves-effect" data-dismiss="modal" ng-hide="genericModal.hideCancel">{{genericModal.cancelLabel}}</a>
+          <a type="button" class="btnModal btn-primary-modal" ng-click="genericModalAccept()">{{genericModal.acceptLabel}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--=======================================================-->
+  <!--          Modal descripción del producto               -->
+  <!--=======================================================-->
+  <div class="modal product_view fade" id="product_view">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+              <div class="pull-left img-calculator"><img class="" ng-src="img/logo.png" style="max-width:150px;"/></div>
+                <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                  <div class="col container">
+                    <div class="thumbnail">
+                      <div class="row">
+                        <div class="col-md-6 container">
+                          <div class="thumbnail producto-individal-min">
+                             <img class="img-responsive" ng-show="viewProduct.selectedPic" ng-src="{{viewProduct.selectedPic.imageUrl}}"/>
+                             <div ng-hide="viewProduct.selectedPic" style="color:grey;display: flex;align-items: center;"><i class="fa fa-mobile" style="margin:0 auto;font-size: 20em;"></i></div>
+                            <div class="thumbs-ribbon row">
+                              <div class="thumb-ribbon col-xs-6 col-sm-3" ng-repeat="image in viewProduct.media">
+                                <div class="thumb-ribbon-container" ng-click="viewProduct.selectedPic = image">
+                                  <img class="img-responsive" ng-src="{{image.imageUrl}}"/>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="producto-individual-descripcion">
+                            <div class="desc-header">{{viewProduct.name}}</div>
+                            <div class="seller-notice visible-md visible-lg visible-xl">Vendido por Mad Media Advertising S.A. de C.V.</div>
+                            <div class="prices"><span class="old-price" style="text-decoration: line-through;">{{viewProduct.price|currency:"$":2}}</span><span class="new-price"><!--{{viewProduct.singleMultiplicamePrice | currency:'$':2}}-->{{cartItem.unitPrice|currency:'$':2}}</span></div>
+                            <div ng-repeat="offer in viewProduct.offerDiscounts" style="margin-top:5px;color:forestgreen">
+                              <span style="color:darkred; font-weight: 400;">HOT SALE</span> {{offer.userMessage}}
+                            </div>
+                            <div ng-repeat="attribute in viewProduct.attributes">
+                            <div class="features" ng-repeat="property in attribute.properties">
+                              <p>{{property.property.name}}: {{property.property.type === 'boolean' ? property.stringValue === 'true' ? 'Sí' : 'No' : property.stringValue}}</p>
+                            </div>
+                          </div>
+
+                          <div class="calc-results display-div" style="margin-bottom:10px;">
+                            <div class="productVariant" ng-show="viewProduct.variantsOptions.length">
+                              <div class="input-group" style="margin-right:20px;">
+                                <span class="input-group-addon" id="basic-addon1" style="color: #fff; background: black;">Color</span>
+                                <select ng-options="item.id as item.label for item in viewProduct.variantsOptions track by item.id" ng-model="product.selectedVariant" class="form-control">
+                                  <option value="" disabled>{{product.variantsHeader}}</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+
+                            <!--calculadora-->
+                            <div class="calc-container">
+                              <div class="hor-calculator">
+                                <div class="calc-step"><center></center></div>
+                                <a class="calc-step" ng-repeat="calcStep in calcSteps" ng-click="calcStepsSelected(calcStep)" ng-class="calcStep.selected === true? 'seletcStep-success' : ''">
+                                  <p ng-class="calcStep.selected === true? 'seletcStep-success' : ''">{{calcStep.label}}</p>{{calcStep.price|currency:"$":2}}<span class="oneProduct">c/u</span>
+                                </a>
+                                <div class="fields-div">
+                                  <span class="cant-label">Cantidad:</span> <input class="cant" type="number" min="1" step="1" ng-model="cartItem.quantity">
+                                  <span class="total-label">Total:</span> <input class="total" type="text" value="{{cartItem.totalPrice|currency:'$':2}}" readonly>
+                                  <span class="ahorra-label">Ahorra:</span> <input class="ahorra" type="text" value="{{cartItem.savesAmount|currency:'$':2}}" readonly>
+                                </div>
+                              </div>
+                            </div>
+                            <br>
+                            <div class="calc-results">
+                              <center>
+                                <button class="button imgBg-button ver-carrito" ng-click="addToCart(viewProduct)"></button>
+                                <button class="button imgBg-button comprar-ya" ng-click="buyNow(viewProduct)"></button>
+                              </center>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!--=======================================================-->
+    <!--           Modal calculadora de compras                -->
+    <!--=======================================================-->
+    <div class="modal fade centralModalCalculadora" id="quickModalCalculadora" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-notify modal-info" role="document">
+        <!--Contenido-->
+        <div class="modal-content">
+          <!--Encabezado-->
+          <div class="modal-header">
+            <div class="col-lg-5">
+              <div class="pull-left"><p>Calculadora de Compras</p></div>
+            </div>
+            <div class="col-lg-7">
+              <div class="pull-right img-calculator hidden-xs"><img class="" src="img/logo.png" style="max-width:150px;"/></div>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span class="fa fa-times-circle" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+          <!--Cuerpo-->
+          <div class="border_1"></div>
+          <div class="modal-body">
+            <span ng-show="busy" class="fa fa-cog fa-spin fa-5x"></span> <!--Loading para indicar que se esta cargando la información-->
+            <div class="text-center container-table-calculator" ng-hide="busy">
+              <form name="form-quick-buy" ng-submit="quickBuy()">
+                <table class="table table-calculator table-hover">
+                  <thead>
+                    <tr>
+                      <th class="hidden-xs" style="padding-left: 60px;">Producto</th>
+                      <th class="text-center hidden-xs">SKU</th>
+                      <th class="text-center">Cantidad</th>
+                      <th class="text-center">Precio Unitario</th>
+                      <th class="text-center">Elegir</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="calcStep in calcSteps">
+                      <td class="hidden-xs">{{calcStep.name}}</td>
+                      <td class="text-center hidden-xs">{{calcStep.sku}}</td>
+                      <td class="text-center">{{calcStep.quantity}}</td>
+                      <td class="text-center">{{calcStep.price | currency:'$':2}}</td>
+                      <td class="text-center">
+                        <label class="control control--radio">
+                        <input type="radio" name="quickBuyQty" ng-model="calcStep.selected" ng-value="calcStep.selected" ng-checked="calcStep.selected === true" ng-click="calcStepsSelected(calcStep)" class="custom-control-input"/>
+                        <div class="control__indicator"></div>
+                        </label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">{{calcSteps[0].name}}</td>
+                      <td class="text-center hidden-xs">{{calcSteps[0].sku}}</td>
+                      <td class="text-center"><input class="cant" type="number" min="1" step="1" ng-model="cartItem.quantityCalculator" style="height: 35px; width: 3em; font-size: 1.5em; padding-left: 0.3em; border: solid 1px #aaa; border-radius: 4px; font-family: 'Abel'; text-align: center;"></td>
+                      <td class="text-center hidden-xs">{{cartItem.unitPrice|currency:'$':2}}</td>
+                      <td class="text-center "><img class="" src="img/multiplicame-rounded.png" style="max-width:70px;"/></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div class="border_1" style="margin-bottom: 30px"></div>
+                <div class="cart-end cart-below">
+                  <div class="" style="margin-left: 10px; margin-right:10px;">
+                  <div class="row">
+                    <div class="col-lg-2 col-xs-12 divBack">
+                      <button type="button" ui-sref="home" data-dismiss="modal" aria-label="Close" style="margin:0px !important; padding: 10px 10px !important;" class="btnMM btn-multiplicame-secondary btn-sm buttonBack"><span class="glyphicon glyphicon-chevron-left"></span> <span style="font-size:8px !important;">SEGUIR COMPRANDO</span></button>
+                    </div>
+      							<div class="col-lg-4 col-xs-12 divSubtotal">
+                      <span class="subtotal-label">SubTotal:</span> <input class="total" type="text" value="{{cartItem.totalPrice|currency:'$':2}}" style="height: 35px; width: 150px; color: #ff9532; font-size: 1.5em; padding-left: 0.3em; border: solid 1px #aaa; border-radius: 4px; font-family: 'Abel'; text-align: center;" readonly>
+      							</div>
+      							<div class="col-lg-4 col-xs-12 divAhorra">
+                      <span class="ahorra-label">Ahorra:</span><span class="ahorra-field">{{cartItem.savesAmount|currency:'$':2}}</span>
+                    </div>
+      							<div class="col-lg-2 col-xs-12 divAddCart">
+                      <button type="button" ng-click="addToCartCalculator(calculatorProducts, cartItem.quantityCalculator)" style="margin:0px !important; padding: 10px 10px !important;" class="btnMM btn-multiplicame-primary btn-sm buttonAddCart"><span class="glyphicon glyphicon-shopping-cart"></span> <span style="font-size:10px !important;">AGREGAR</span></button>
+      							</div>
+                  </div>
+                </div>
+      					</div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!--=======================================================-->
+  <!--        Modal para agregar productos a comparar        -->
+  <!--=======================================================-->
+
+  <!--No mostrar mientras no haya productos agregados a comparar-->
+  <div class="compareFooter" id="compare_mobiles" ng-show="Modal.hidden">
+    <a class="sprite closeModal popupclose" title="Cerrar" href="javascript:void(0)"  ng-click="hiddenModal()"></a>
+    <div class="compare_table">
+      <table class="show_col_1 show_col_2">
+        <thead>
+          <tr class="data_line">
+            <td class="col_1" ng-repeat="compare in listCompare">
+              <div class="device_box">
+                <!--Botón para eliminar un producto agregado-->
+                <a ng-click="deleteCompareToProduct(compare)" class="xhr del_device" title="Eliminar">
+                  <span class="glyphicon glyphicon-trash"></span><em>Eliminar</em>
+                </a>
+                <a class="comparing_device nf">
+                  <img width="45" height="45" ng-src="{{compare.media[0].imageUrl}}"/>
+                  <span class="device_info">
+                    <strong class="device_title text-strong">{{compare.name}}</strong>
+                    <span class="price info_line">{{compare.singleMultiplicamePrice|currency:"$":2}}</span>
+                  </span>
+                </a>
+              </div>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="section_title">
+            <th class="col-sm-2" colspan="2">
+              <div class="btn-group pull-right">
+                <!--Botón para vaciar el modal de los productos agregados a comparar-->
+                <button ng-click="deleteAllCompareToProduct()" class="btnMM btn-default" style="height: 30px !important; padding: 0px 0 0px 0px; text-align: center; width: 50px;"> Vaciar</button>
+                <!--Botón comparar, al hacer clic nos va mandar a una página para ver con mas detalle de los dos productos agregados a comparar-->
+                <button ui-sref="compare" class="btnMM btn-multiplicame-primary" style="height: 30px !important; padding: 0px 0 0px 0px; text-align: center; width: 70px;">Comparar</button>
+              </div>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--=======================================================-->
+  <!--                  Librerías js instaladas              -->
+  <!--=======================================================-->
+  <script src="lib/jquery/dist/jquery.js"></script>
+  <script src="lib/jquery-ui/jquery-ui.js"></script>
+  <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="lib/remarkable-bootstrap-notify/dist/bootstrap-notify.js"></script>
+  <script src="lib/bootstrap-slider/bootstrap-slider.js"></script>
+  <script src="lib/underscore/underscore.js"></script>
+  <script src="lib/moment/moment.js"></script>
+  <script src="lib/moment/locale/es.js">moment.locale("es");</script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-resource/angular-resource.js"></script>
+  <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="lib/angular-file-upload/dist/angular-file-upload.js"></script>
+  <script src="lib/ng-thumb/index.js"></script>
+  <script src="lib/slick-carousel/slick/slick.js"></script>
+  <script src="lib/angular-slick-carousel/dist/angular-slick.min.js"></script>
+  <script src="lib/angular-ui-sortable/sortable.js"></script>
+  <script src="lib/ngstorage/ngStorage.min.js"></script>
+  <script src="lib/ngMask/dist/ngMask.min.js"></script>
+  <!--=======================================================-->
+  <!--       Controladores y servicios js                    -->
+  <!--=======================================================-->
+
+  </script>
+  <script type="text/javascript">
+    function amexErrorCallback(error) {
+      console.log("Amex error:",JSON.stringify(error));
+    }
+
+    function amexCancelCallback() {
+      console.log("AMEX Payment canceled");
+    }
+
+    function amexCompleteCallback(response) {
+      console.log("Success! ",JSON.stringify(response));
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
